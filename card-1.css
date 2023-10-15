@@ -1,255 +1,160 @@
-*{
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-}
-body{
-    background-image: url("light.gif");
+    background: url(black\ dot.gif.gif);
     background-size: cover;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding:0;
+    margin:0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+}
 
-}
-.heading {
-    padding-top: 0%;
-    top: 0;
+.container{
     width: 100%;
-    height: auto;
+    margin: 70px auto 0;
     display: flex;
-    justify-content: center;
-}
-.overlay{
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.heading:hover{
-    transform: scale(1.2);
-    border-style: groove;
-    transition: 0.5s;
-    filter: brightness(150%);
-}
-.dropbtn {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-.dropdown {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    left: 0;
-}
-.dropdown-content {
-    display: none;
-    position: relative;
-    background-color: #08002c;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {background-color: #08002c}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown:hover .dropbtn {
-  background-color: #08002c;
-  filter: brightness(150%);
-}
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-  
-.overlay-content {
-    position: relative;
-    top: 15%;
-    width: 100%;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
     
 }
-  
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-  
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-  
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-  
-@media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-    }
-}
-.container-2{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-.image-1{
-    width: 100px;
-    height: 100px;
-}
-.image-1:hover{
-    width: 120px;
-    height: 120px;
-    background-color: #08002c;
-    filter: brightness(130%);
-}
-.container-3{
-    display: flex;
-}
-section{
-    display: flex;
-    justify-content: center;
-}
-.swiper{
-    width: 300px;
-    display: flex;
-}
-.container .content .card{
-    display: flex;
-    justify-content: center;
-}
-section .card .image{
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    padding: 3px;
-    background-color: black;
-}
-section .card .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid gold;
-}
-.card{
-    display: flex;
-    justify-content: center;
+.container .box{
     position: relative;
-    background-color: #240e00;
-    border-radius: 20px;
-    margin: 20px 0;
-    width: 25%;
-    border: 3px solid gold;
+    width: 90%;
+    height: 500px;
+    background: url(Screenshot\ 2022-08-02\ 113926.jpg) ;
+    margin: 50px;
+    box-sizing: border-box;
+    display: inline-block;
 }
-.card:hover{
-    filter: brightness(150%);
-}
-
-.card::before{
-    content: "";
-    position: absolute;
-    height: 40%;
-    width: 100%;
-    background: #000000;
-    border-radius: 20px 20px 0px 0px;
-}
-.card .card-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 30px 20px 30px;
+.container .box .imgbox 
+{
     position: relative;
-    z-index: 100;
 }
-.card .picons{
+.container .box .imgbox img
+{
+    max-width: 100%;
+    transition: transform 2s;
+}
+.container .box:hover .imgbox img{
+    transform: scale(1.2) ;
+}
+.container .box .details
+{
     position: absolute;
     top: 10px;
-    right: 20px; 
-    align-items: center;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    transform: scaleY(0);
+    transition: transform .5s;
+
 }
-.card .picons i{
-    color: gold;
-    opacity: 0.6;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.container .box:hover .details
+{
+    transform: scaleY(1); 
 }
-.card .picons i:hover{
-    opacity: 1;
+.container .box .details .content
+{
+    position: absolute ;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: centre;
+    padding: 15px;
+    color: #fff;
+
 }
-.card .texts{
+.container .box .details .content h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+
+}
+.container .box .details .content p
+{
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 20px;
+    color: rgb(254, 254, 250);
+
+
+}
+.icon-bar {
+    width: 90px;
+    background-color: #555;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    color: white;
 }
-.texts .name{
-    font-size: 20px;
-    font-weight: 600;
-}
-.texts .info{
-    font-size: 15px;
-    font-weight: 500;
-}
-.card .participation{
-    display: flex;
-    align-items: center;
-    margin-top: 18px;
-}
-.card .participation a{
-    font-size: 18px;
-    margin: 0 2px;
-    color: rgb(230, 193, 30);
-}
-.card .button{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-.card .button button{
-    background: rgb(207, 207, 207);
-    outline: none;
-    border: none;
-    color: rgb(212, 212, 212);
-    padding: 8px 22px;
-    border-radius: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+  
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
     transition: all 0.3s ease;
-    cursor: pointer;
+    color: white;
+    font-size: 36px;
 }
-.button button:hover{
-    background: rgb(130, 192, 60);
+  
+.icon-bar a:hover {
+    background-color: #000;
+}
+  
+.active {
+    background-color: #04AA6D;
+}
+.background {
+    background-color: green;
+    height: 150px;
+    padding: 10px;
+}
+.font{
+    font-family: "Audiowide", sans-serif;
+}
+.logo{
+    justify-content: center;
+
+}
+@media only screen and (max-width: 800px) {
+
+    #header{
+            width: 100%;
+            height: auto;
+            background-size: 100% auto !important;
+    }
+}
+@media (hover:hover){
+    
+    .container .box:hover .imgbox img{
+        transform: scale(1.2) ;
+    }
+    .container .box .details
+    {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        transform: scaleY(0);
+        transition: transform .5s;
+    
+    }
+    .container .box:hover .details
+    {
+        transform: scaleY(1); 
+    }
+    .container .box .details .content
+    {
+        position: absolute ;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: centre;
+        padding: 15px;
+        color: #fff;
+    
+    }
+   
 }
